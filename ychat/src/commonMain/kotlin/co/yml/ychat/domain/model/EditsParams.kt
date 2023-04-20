@@ -1,6 +1,6 @@
 package co.yml.ychat.domain.model
 
-internal data class EditsParams(
+data class EditsParams(
     var model: String = "text-davinci-edit-001",
     var input: String = "",
     var instruction: String = "",

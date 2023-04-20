@@ -13,7 +13,7 @@ package co.yml.ychat.domain.model
  *
  * @param user: A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse.
  */
-internal data class ImageGenerationsParams(
+data class ImageGenerationsParams(
     var prompt: String = "",
     var results: Int = 1,
     var size: String = "256x256",

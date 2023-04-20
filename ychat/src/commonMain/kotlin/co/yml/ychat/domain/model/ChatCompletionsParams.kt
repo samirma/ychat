@@ -1,6 +1,6 @@
 package co.yml.ychat.domain.model
 
-internal data class ChatCompletionsParams(
+data class ChatCompletionsParams(
     var messages: ArrayList<ChatMessage> = arrayListOf(),
     var model: String = "gpt-3.5-turbo",
     var maxResults: Int = 1,

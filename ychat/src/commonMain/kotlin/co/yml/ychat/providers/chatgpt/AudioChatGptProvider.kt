@@ -1,4 +1,4 @@
-package co.yml.ychat.domain.usecases
+package co.yml.ychat.providers.chatgpt
 
 import co.yml.ychat.data.api.ChatGptApi
 import co.yml.ychat.domain.mapper.toAudioParamsDto
@@ -6,9 +6,9 @@ import co.yml.ychat.domain.model.AudioParams
 import co.yml.ychat.domain.model.FileBytes
 import co.yml.ychat.providers.AudioProvider
 
-internal class AudioUseCase(private val chatGptApi: ChatGptApi) {
+internal class AudioChatGptProvider(private val chatGptApi: ChatGptApi): AudioProvider {
 
-    suspend fun requestAudioTranscription(
+    override suspend fun  requestAudioTranscription(
         filename: String,
         audioFile: FileBytes,
         params: AudioParams
@@ -18,7 +18,7 @@ internal class AudioUseCase(private val chatGptApi: ChatGptApi) {
         return response.getBodyOrThrow().text
     }
 
-    suspend fun requestAudioTranslations(
+    override suspend fun  requestAudioTranslations(
         filename: String,
         audioFile: FileBytes,
         params: AudioParams
