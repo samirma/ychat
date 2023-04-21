@@ -7,6 +7,7 @@ import co.yml.ychat.android.presentation.completions.CompletionsViewModel
 import co.yml.ychat.android.presentation.edits.EditsViewModel
 import co.yml.ychat.android.presentation.home.viewmodel.HomeViewModel
 import co.yml.ychat.android.presentation.models.viewmodel.ModelsViewModel
+import co.yml.ychat.android.presentation.settings.SettingsScreenViewModel
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 
@@ -17,4 +18,5 @@ val appModule = module {
     viewModelOf(::ModelsViewModel)
     viewModelOf(::CompletionsViewModel)
     viewModelOf(::EditsViewModel)
+    viewModelOf(::SettingsScreenViewModel)
 }

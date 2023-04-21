@@ -18,10 +18,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import co.yml.ychat.android.presentation.models.viewmodel.ModelsViewModel
 import co.yml.ychat.android.ui.theme.YChatTheme
+import org.koin.androidx.compose.getViewModel
 
 @Composable
-internal fun SettingsScreen() {
+internal fun SettingsScreen(viewModel: SettingsScreenViewModel = getViewModel()) {
     val providers = listOf("ChatGPT", "Custom")
     var selectedProvider = remember { mutableStateOf(providers[0]) }
 
