@@ -51,7 +51,7 @@ internal class LibraryModule(private val apiKey: String) {
     private val domainModule = module {
         factory { ListModelsUseCase(get()) }
         factory { RetrieveModelUseCase(get()) }
-        factory { CompletionUseCase(get(), get()) }
+        factory { CompletionUseCase(get()) }
         factory { ChatCompletionsUseCase(get()) }
         factory { ImageGenerationsUseCase(get()) }
         factory { EditsUseCase(get()) }

@@ -1,13 +1,8 @@
 package co.yml.ychat.domain.usecases
 
-import co.yml.ychat.data.api.ChatGptApi
-import co.yml.ychat.domain.mapper.toModel
-import co.yml.ychat.domain.model.AIModel
+import co.yml.ychat.providers.RetrieveModelProvider
 
-internal class RetrieveModelUseCase(private val chatGptApi: ChatGptApi) {
+internal class RetrieveModelUseCase(private val provider: RetrieveModelProvider) {
 
-    suspend fun getModel(id: String): AIModel {
-        val response = chatGptApi.model(id)
-        return response.getBodyOrThrow().toModel()
-    }
+    suspend fun getModel(id: String) = provider.getModel(id)
 }

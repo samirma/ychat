@@ -23,7 +23,7 @@ package co.yml.ychat.domain.model
  * @param [enableChatStorage] This flag enables the chat history to be stored, so that the GPT chat can
  * get the context of previous conversations.
  */
-internal data class CompletionParams(
+data class CompletionParams(
     var prompt: String = "",
     var model: String = "text-davinci-003",
     var maxTokens: Int = 1024,
